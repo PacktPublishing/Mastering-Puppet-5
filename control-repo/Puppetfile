@@ -1,0 +1,26 @@
+forge "https://forge.puppet.com"
+
+# Forge Modules
+# Always take latest version of NTP, notice no version listed
+mod "puppetlabs/ntp"
+
+# Specific versions of stdlib and nginx.
+mod "puppetlabs/stdlib", "4.25.1"
+mod "puppetlabs/nginx", "0.11.0"
+
+# Modules from Git
+
+# Pointing to Master Branch
+mod 'ourapp',
+  :git    => 'git@git.ourcompany.com:ourapp.git',
+  :branch => 'master',
+
+# Pointing to the 1.2.2 tag
+mod 'ourapp2',
+  :git => 'git@git.ourcompany.com:ourapp2.git',
+  :tag => '1.2.2',
+
+# pointing to an explicit git commit
+mod 'ourapp3',
+  :git    => 'git@git.ourcompany.com:ourapp3.git',
+  :commit => '0b1ae47d7ff83489299bb7c9da3ab7f4ce7e49a4',

@@ -1,0 +1,7 @@
+# nodes/snowflake.ourcompany.com.yaml
+---
+classes:
+  - profile::partners::baseline
+  - role::ourapp
+class_exclusions:
+  - profile::baseline
