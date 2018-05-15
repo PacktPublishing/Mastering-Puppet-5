@@ -1,0 +1,21 @@
+# Edit our files
+
+# Change the branch of the component module to new_feature
+vim Puppetfile
+
+mod 'module',
+  git => git@gitserver.com:puppet/module.git,
+  branch => 'new_feature'
+
+# Make a change in the profile that utilizes the component modules
+vim site/profiles/manifests/baseline.pp
+
+# Add our new changes, to be staged for a commit
+git add .
+
+# Commit our changes
+git commit -m 'Supporting new Feature to support <effort>'
+
+# Push our code back to the control repository as a new branch intended to be
+# realized as a new environment on the Puppet Master
+git push origin new_feature

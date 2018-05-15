@@ -1,0 +1,8 @@
+$ pdk new class config
+pdk (INFO): Creating '/Users/rary/workspace/packt/module/manifests/config.pp' from template.
+pdk (INFO): Creating '/Users/rary/workspace/packt/module/spec/classes/config_spec.rb' from template
+
+# Sample with folders
+$ pdk new class server::main
+pdk (INFO): Creating '/Users/rary/workspace/packt/module/manifests/server/main.pp' from template.
+pdk (INFO): Creating '/Users/rary/workspace/packt/module/spec/classes/server/main_spec.rb' from template.

@@ -1,0 +1,14 @@
+# From directory pdk new module was run in, enter the module, create a
+# git repository and add all files to staging
+$ cd module
+$ git init
+$ git add .
+
+# Initial Commit is a good common message as a starting point
+$ git commit -m 'Initial Commit'
+
+# Add the upstream remote
+$ git remote add origin git@gitserver.com:puppet/module.git
+
+# Push to master and begin regular module development workflow
+$ git push origin master

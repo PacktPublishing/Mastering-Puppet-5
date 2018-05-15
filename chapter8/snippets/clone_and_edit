@@ -1,0 +1,29 @@
+# Clone the remote git repository for the module. You can skip this step if the
+# repository is already present on your local system
+git clone git@gitserver.com:puppet/module.git
+
+# If the repository is already local on the system, we'll just want to update our
+# local master branch
+git pull origin master
+
+# Check out a new environment based on the existing master branch, which is the
+# default branch of a git repository, and the branch we should start on on a clone.
+git checkout -b new_feature
+
+# We'll edit some files to add new features
+
+# Adding new paramters to init
+vim manifests/init.pp - Adding new parameters to init
+# Adding a new feature to config
+vim manifests/config.pp
+# Ensuring the new feature is represented in the deployed template
+vim templates/file.epp
+
+# Add all edited files to git staging, assuming you're at the base of the repository
+git add .
+
+# Add an atomic commit, not only describing what the commit is, but why it was done
+git commit -m 'Added new code to support feature requested by client'
+
+# Push this code back to the origin repository as the new branch
+git push origin new_feature

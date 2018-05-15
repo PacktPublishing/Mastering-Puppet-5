@@ -1,0 +1,12 @@
+# If PE Client Tools are not installed locally, the Puppet Master comes with them
+# installed by default. We'll assume that the PE client tools are not already
+# installed and log in to the Puppet Master
+ssh user@puppet.org.net
+
+# Generate an authorization token to allow your PE Console user to deploy code
+puppet-access login
+
+# Use our access token to deploy our new environment. Notice the -w flag, which
+# triggers the client tools to wait and give you a pass or fail message on the
+# status of the deployment.
+puppet-code deploy new_feature -w

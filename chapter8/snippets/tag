@@ -1,0 +1,7 @@
+rary at Ryans-MBP in ~/workspace/packt/module (master)
+$ git tag 'v1.4'
+
+$ git tag -l
+v1.4
+
+$ git push origin v1.4

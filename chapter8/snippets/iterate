@@ -1,0 +1,30 @@
+# Start in the repository with the change. This could be a component module
+# or the control repository. We're assuming each repository is still on the
+# branch from the last step, and no pulls or branch changes are necessary.
+
+# Edit the file with the targeted changes
+vim manifests/manifest.pp
+
+# Add the file to the git staging area
+git add manifests/manifest.pp
+
+# Commit the file to the repository
+git commit -m 'Fixing specific bug'
+
+# Push the repository back to upstream origin
+git push origin new_feature
+
+# From the Puppet Master, or a workstation with PE Client Tools
+
+# Log in with RBAC
+puppet-access login
+
+# Deploy the environment
+puppet-code deploy new_feature -w
+
+# On the test node
+
+# Run the agent, observe the results
+puppet agent -t
+
+# Repeat as necessary until issues are solved

@@ -1,0 +1,17 @@
+# Many Enterprise-focused git repositories have built in merge features, that ar
+# likely more robust and easier to use than a simple git merge. If you have an in
+# house git solution, follow the program documentation on a merge request
+
+# On Module
+# We'll change to target branch, in this case master
+$ git checkout master
+
+$ git merge feature_branch
+Updating 0b3d899..227a02e
+Fast-forward
+ README.md | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+
+# Push the branch to upstream repository so Puppet can find it.
+$ git push origin master

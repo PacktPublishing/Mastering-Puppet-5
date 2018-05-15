@@ -1,0 +1,17 @@
+# This step is not needed if the repository is already on the local file system
+git clone git@gitserver.com:puppet/control-repo.git
+
+# We'll assume integration is the pre-production branch used by the organization
+# to stage changes before moving into production-like branches
+# Remember, there usually is no master branch in a control repository, so we want
+# to target a specific branch to work against.
+git checkout integration
+
+# If this repo has been freshly cloned, git pull shouldn't provide any new updates,
+# but it's safe to run either way. If the repository has already been cloned in the
+# past, you definitely want to run this command to pull the latest commits from 
+# upstream.
+git pull origin integration
+
+# We'll perform a second checkout, with the -b flag to indicate a new branch based on the existing branch
+git checkout -b new_feature

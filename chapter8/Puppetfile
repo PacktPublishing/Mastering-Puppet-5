@@ -1,0 +1,6 @@
+# Production-like branch, tagged with a solid version number
+forge https://forge.puppetlabs.com
+
+mod 'module',
+  git => 'git@gitserver.com:puppet/module.git',
+  tag => 'v1.4'
