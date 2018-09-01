@@ -1,0 +1,21 @@
+<LocationMatch ^/>
+   AuthType Basic
+   AuthName "Login to puppetboard"
+   Order Allow,Deny
+   Allow from All
+
+   AuthBasicProvider ldap
+   <%- if @ldap_bind_dn -%>
+   AuthLDAPBindDN "<%= @ldap_bind_dn -%>"
+   <%- end -%>
+   <%- if @ldap_bind_password -%>
+   AuthLDAPBindPassword "<%= @ldap_bind_password -%>"
+   <%- end -%>
+   <%- if @ldap_url -%> 
+   AuthLDAPURL "<%= @ldap_url -%>"
+   <%- end -%>
+   <%- if @ldap_bind_authoritative -%>
+   AuthLDAPBindAuthoritative <%= @ldap_bind_authoritative -%>
+   <%- end -%>
+   Require valid-user
+</LocationMatch>

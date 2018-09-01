@@ -1,0 +1,13 @@
+{
+  "name": "gentoo-portage",
+  "version": "2.3.0",
+  "author": "Gentoo",
+  "summary": "Puppet types and providers for Gentoo portage",
+  "license": "GPLv2",
+  "source": "https://github.com/gentoo/puppet-portage.git",
+  "project_page": "https://github.com/gentoo/puppet-portage",
+  "issues_url": "https://github.com/gentoo/puppet-portage/issues",
+  "dependencies": [
+    {"name":"puppetlabs/concat"}
+  ]
+}

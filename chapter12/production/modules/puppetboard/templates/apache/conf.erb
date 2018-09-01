@@ -1,0 +1,37 @@
+WSGIDaemonProcess puppetboard user=<%= @user -%> group=<%= @user -%> threads=<%= @threads %> maximum-requests=<%= @max_reqs %>
+WSGIScriptAlias <%= @wsgi_alias -%> <%= @docroot -%>/wsgi.py
+
+<Directory <%= @docroot -%>>
+    WSGIProcessGroup puppetboard
+    WSGIApplicationGroup %{GLOBAL}
+    <IfVersion < 2.4>
+      Order allow,deny
+      Allow from all
+    </IfVersion>
+    <IfVersion >= 2.4>
+      Require all granted
+    </IfVersion>
+</Directory>
+<% if @enable_ldap_auth -%>
+<LocationMatch ^/puppetboard>
+   AuthType Basic
+   AuthName "Login to puppetboard"
+   Order Allow,Deny
+   Allow from All
+
+   AuthBasicProvider ldap
+   <%- if @ldap_bind_dn -%>
+   AuthLDAPBindDN "<%= @ldap_bind_dn -%>"
+   <%- end -%>
+   <%- if @ldap_bind_password -%>
+   AuthLDAPBindPassword "<%= @ldap_bind_password -%>"
+   <%- end -%>
+   <%- if @ldap_url != false -%>
+   AuthLDAPURL "<%= @ldap_url -%>"
+   <%- end -%>
+   <%- if @ldap_bind_authoritative -%>
+   AuthLDAPBindAuthoritative <%= @ldap_bind_authoritative -%>
+   <%- end -%>
+   Require valid-user
+</LocationMatch>
+<% end -%>

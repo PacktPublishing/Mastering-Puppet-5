@@ -1,0 +1,153 @@
+CHANGELOG
+=========
+
+2.3.0
+-----
+
+2015-07-25
+
+This is a backwards compatible bugfix release.
+
+  * An option to disable auto remerging by make.conf changes
+  * Parameter to allow usage of custom overlay lists with layman
+  * Update puppetlabs/concat dependency
+  * Update for Facter 3.0.1
+  * Set attribute to an empty array if absent
+  * Handle empty strings passed in package_* resources
+  * Handle parsing of wildcard atoms
+
+
+2.2.0
+-----
+
+2014-05-15
+
+This is a backwards compatible bugfix release.
+
+  * Fix command executed on changed make.conf
+  * Allow installing portage-utils using class portage
+  * Ensure dependent packages are installed by default
+  * Change eselect --no-color option to --color=no
+  * Allow newer concat versions
+  * Set correct path for exec resources
+
+
+2.1.0
+-----
+
+2013-11-01
+
+This is a backwards incompatible feature and bugfix relase.
+It contains the work from GSoC 2013 by Vikraman Choudhury.
+
+### User notes:
+
+  * #75 Support for package slots
+  * #78 Better eselect provider
+  * #81 Type and provider for package.env
+  * #85 Type and provider for layman
+  * #86 Use '=' when compare pattern is missing
+  * #90 Type and provider for webapp-config
+  * #98 Handle package version when a rebuild is triggered
+  * #100 Handle nested attribute arrays
+  * #102 Updates in portage::makeconf
+  * #115 Add support for installation of Gentoo base and other tools
+
+### Developer notes:
+
+  * #76 Use correct regexes from portage
+  * #82 Update tests with :version and :slot
+  * #84 Set defaults for package_* types
+  * #104 Fix postsync, enhance package definition and cosmetic code cleanups
+  * #111 Use @ prefix for variables in erb templates to fix deprecated syntax
+  * #112 Update Modulefile with the new location in github and forge
+  * #113 Modify $LOAD_PATH to fix require errors
+
+
+2.0.1
+-----
+
+2013-03-24
+
+This is a backwards compatible bugfix release
+
+  * Apply eselect facts only in Gentoo systems
+  * (portage-#62) Allow `*` in package_* version field
+  * Refactor tests to use shared examples and contexts.
+
+
+2.0.0
+-----
+
+2013-02-24
+
+This is a backwards incompatible feature release.
+
+For an overview of the new usage, please see the README at
+https://github.com/adrienthebo/puppet-portage/blob/master/README.markdown
+
+  * (portage-#20) package_* version is now an independent field
+  * (portage-#41) Default package_* to present
+  * Remove portage class parameters in favor of portage::makeconf
+  * (portage-#29) Add eselect type and provider
+
+1.1.1
+-----
+
+This is a backwards compatible bugfix release.
+
+  * (maint) Support for Travis-ci added
+  * (portage-#36) Permit numeric values in atom name and category
+  * (portage-#25) Fixed mangling and duplication of _use and _keywords flags
+
+1.1.0
+-----
+
+This is a backwards compatible bugfix and feature release.
+
+  * (maint) File permissions fixed for group and other read access
+  * (portage-#9) Add variables from `emerge --info` as facts
+  * (portage-#23) Deduplicate rebuild exec in portage::package
+
+1.0.1
+-----
+
+2013-01-30
+
+This is a backwards compatible bugfix release.
+
+  * (portage-#21) Add portage util require for all package_* types.
+
+1.0.0
+-----
+
+2012-12-07
+
+This is a backwards incompatible feature and bugfix release.
+
+  * Renamed all classes and defines from 'gentoo' to 'portage'
+  * Bugfixes for the package_use parsedfile provider
+  * Metadata corrections to add concat as a dependency
+  * Site specific files removed
+  * Removed legacy defined types for package.* entries
+  * Removed unusable localegen and category defined types
+  * (portage-#7) make.conf moved from /etc/make.conf to /etc/portage/make.conf
+  * (portage-#8) Order package_* resources before package installation
+  * (portage-#14) Rename package_use `use_flags` to `use`
+  * (portage-#18) Comments for each class, style guide corrections
+
+Major thanks to Theo Chatzimichos for a ton of bugfixes and QA testing.
+
+0.1.0
+-----
+
+2012-10-20
+
+  * Initial forge release with expanded features and tests.
+
+0.0.1
+-----
+
+2011-08-31
+
+  * Initial pre-release
