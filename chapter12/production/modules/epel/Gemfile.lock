@@ -103,7 +103,7 @@ GEM
       unf (>= 0.0.5, < 1.0.0)
     ethon (0.11.0)
       ffi (>= 1.3.0)
-    excon (0.62.0)
+    excon (0.78.1)
     facter (2.5.1)
     facterdb (0.5.2)
       facter
@@ -397,7 +397,6 @@ DEPENDENCIES
   puppet-lint-unquoted_string-check
   puppet-lint-version_comparison-check
   puppetlabs_spec_helper (~> 2.1.1)
-  rake
   rspec-puppet (~> 2.5)
   rspec-puppet-facts
   rubocop (= 0.48.0)
