@@ -174,7 +174,7 @@ GEM
     ipaddress (0.8.3)
     jgrep (1.5.0)
     jmespath (1.4.0)
-    json (2.1.0)
+    json (2.3.1)
     json-schema (2.8.0)
       addressable (>= 2.4)
     json_pure (2.1.0)
@@ -397,7 +397,6 @@ DEPENDENCIES
   puppet-lint-unquoted_string-check
   puppet-lint-version_comparison-check
   puppetlabs_spec_helper (~> 2.1.1)
-  rake
   rspec-puppet (~> 2.5)
   rspec-puppet-facts
   rubocop (= 0.48.0)
