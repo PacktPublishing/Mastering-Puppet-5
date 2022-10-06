@@ -2,8 +2,8 @@ GEM
   remote: https://rubygems.org/
   specs:
     CFPropertyList (2.3.6)
-    addressable (2.5.2)
-      public_suffix (>= 2.0.2, < 4.0)
+    addressable (2.8.1)
+      public_suffix (>= 2.0.2, < 6.0)
     ansi (1.5.0)
     ast (2.4.0)
     aws-eventstream (1.0.1)
@@ -238,7 +238,7 @@ GEM
     pry-byebug (3.4.3)
       byebug (>= 9.0, < 9.1)
       pry (~> 0.10)
-    public_suffix (3.0.2)
+    public_suffix (5.0.0)
     puppet (4.0.0)
       facter (> 2.0, < 4)
       hiera (>= 2.0, < 3)
@@ -397,7 +397,6 @@ DEPENDENCIES
   puppet-lint-unquoted_string-check
   puppet-lint-version_comparison-check
   puppetlabs_spec_helper (~> 2.1.1)
-  rake
   rspec-puppet (~> 2.5)
   rspec-puppet-facts
   rubocop (= 0.48.0)
